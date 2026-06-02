@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="El Movimiento — the Chicano Movement, 1960–1973. Who they were, what they fought for, the leaders who led them, and the flashpoints that defined an era." />
+  <meta name="description" content="El Movimiento — the Chicano Movement, 1960–1973. A student research project." />
   <title>El Movimiento — The Chicano Movement, 1960–1973</title>
 
   <!-- Fonts: Anton (poster display), Spectral (editorial serif), DM Mono (archival labels) -->
@@ -19,6 +19,9 @@
 
   <!-- Reading progress bar -->
   <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+
+  <!-- Shown only if content.json fails to load (e.g. opened via file://) -->
+  <div class="error-banner" id="error-banner" hidden></div>
 
   <!-- ============================== NAV ============================== -->
   <header class="nav" id="nav">
@@ -46,25 +49,17 @@
       <div class="hero__sun" aria-hidden="true"></div>
 
       <div class="hero__inner">
-        <p class="eyebrow eyebrow--light">United States · 1960&ndash;1973</p>
+        <p class="eyebrow eyebrow--light" data-text="heroEyebrow"></p>
 
         <h1 class="hero__title">
-          <span class="hero__line">El</span>
-          <span class="hero__line hero__line--accent">Movimiento</span>
+          <span class="hero__line" data-text="heroTitleTop"></span>
+          <span class="hero__line hero__line--accent" data-text="heroTitleBottom"></span>
         </h1>
 
-        <p class="hero__sub">
-          The Chicano Movement &mdash; a generation of Mexican Americans who organized
-          for land, labor, education, and the right to define themselves on their own terms.
-        </p>
+        <p class="hero__sub" data-text="heroSub"></p>
 
-        <div class="hero__meta">
-          <span>¡Sí&nbsp;se&nbsp;puede!</span>
-          <span class="hero__meta-rule" aria-hidden="true"></span>
-          <span>Brown&nbsp;&amp;&nbsp;Proud</span>
-          <span class="hero__meta-rule" aria-hidden="true"></span>
-          <span>¡Viva&nbsp;la&nbsp;Causa!</span>
-        </div>
+        <!-- Modular: one tag per item in cards.meta -->
+        <div class="hero__meta" data-cards="meta" data-template="tpl-meta"></div>
       </div>
 
       <a href="#who" class="hero__scroll" aria-label="Scroll to content">
@@ -76,290 +71,64 @@
     <!-- ============================== WHO THEY WERE ============================== -->
     <section class="section section--who" id="who">
       <div class="section__head">
-        <span class="section__num">01</span>
-        <p class="eyebrow">Identify the Group</p>
-        <h2 class="section__title">Who They Were</h2>
+        <span class="section__num" data-text="whoNum"></span>
+        <p class="eyebrow" data-text="whoEyebrow"></p>
+        <h2 class="section__title" data-text="whoTitle"></h2>
       </div>
 
-      <div class="who__grid">
-        <div class="who__lede">
-          <p class="lede">
-            <span class="dropcap">C</span>hicanos were Mexican Americans &mdash; many of them
-            farmworkers, students, and urban youth &mdash; who, in the 1960s, reclaimed a word once
-            used as an insult and turned it into a banner of pride and political identity.
-          </p>
-          <p>
-            <!-- TODO: Replace with your researched description of who the Chicano community was,
-                 grounded in your sources (The Americans Ch. 23, Who Built America Ch. 12, etc.). -->
-            They lived between two worlds &mdash; rooted in Mexican heritage yet born of the
-            United States &mdash; and frequently faced segregation, low wages, and exclusion from the
-            political process. The movement gave that shared experience a name, a flag, and a voice.
-          </p>
-        </div>
-
-        <!-- INTEGRATED PRIMARY SOURCE #1 -->
-        <figure class="source source--inline">
-          <span class="source__tag">Primary Source</span>
-          <blockquote class="source__quote">
-            &ldquo;[ Insert a short, verified excerpt from a primary source that defines Chicano
-            identity &mdash; e.g., from <em>El Plan Espiritual de Aztlán</em> (1969). ]&rdquo;
-          </blockquote>
-          <figcaption class="source__cite">
-            <span class="source__doc">El Plan Espiritual de Aztlán</span>
-            <span class="source__detail">Manifesto · Denver Youth Conference, 1969</span>
-            <span class="source__why"><strong>Why it matters:</strong> [ Explain how this document
-            framed a shared Chicano identity and homeland. ]</span>
-          </figcaption>
-        </figure>
+      <div class="who__lede">
+        <p class="lede" data-text="whoLede"></p>
+        <p data-text="whoBody"></p>
       </div>
 
-      <!-- Quick facts strip -->
-      <ul class="facts">
-        <li class="facts__item">
-          <span class="facts__num">1965</span>
-          <span class="facts__label">Delano Grape Strike begins</span>
-        </li>
-        <li class="facts__item">
-          <span class="facts__num">22k+</span>
-          <span class="facts__label">Students in the 1968 East L.A. Walkouts</span>
-        </li>
-        <li class="facts__item">
-          <span class="facts__num">1969</span>
-          <span class="facts__label">First National Chicano Youth Conference</span>
-        </li>
-        <li class="facts__item">
-          <span class="facts__num">20k+</span>
-          <span class="facts__label">Marchers at the Chicano Moratorium, 1970</span>
-        </li>
-      </ul>
+      <!-- Modular quick-facts strip: one item per cards.facts -->
+      <ul class="facts" data-cards="facts" data-template="tpl-fact"></ul>
     </section>
 
     <!-- ============================== THE CAUSE (GOALS) ============================== -->
     <section class="section section--cause" id="cause">
       <div class="section__head section__head--light">
-        <span class="section__num">02</span>
-        <p class="eyebrow eyebrow--light">Goals of the Movement</p>
-        <h2 class="section__title">The Cause</h2>
-        <p class="section__intro">
-          What were Chicanos asking for? The movement was never a single demand but a
-          braided set of struggles &mdash; over the fields, the classroom, the ballot box,
-          and the right to belong.
-        </p>
+        <span class="section__num" data-text="causeNum"></span>
+        <p class="eyebrow eyebrow--light" data-text="causeEyebrow"></p>
+        <h2 class="section__title" data-text="causeTitle"></h2>
+        <p class="section__intro" data-text="causeIntro"></p>
       </div>
 
-      <div class="cause__grid">
-        <article class="goal">
-          <span class="goal__icon" aria-hidden="true">✊</span>
-          <h3 class="goal__title">Labor &amp; Wages</h3>
-          <p>Fair pay, safe conditions, and the right to unionize for farmworkers
-            exploited in the fields of the Southwest.</p>
-        </article>
-
-        <article class="goal">
-          <span class="goal__icon" aria-hidden="true">✺</span>
-          <h3 class="goal__title">Land &amp; Justice</h3>
-          <p>Recovery of land grants promised to Mexican families and stripped away
-            after 1848.</p>
-        </article>
-
-        <article class="goal">
-          <span class="goal__icon" aria-hidden="true">✎</span>
-          <h3 class="goal__title">Education</h3>
-          <p>An end to segregated, underfunded schools &mdash; and a curriculum that
-            taught Mexican American history and culture.</p>
-        </article>
-
-        <article class="goal">
-          <span class="goal__icon" aria-hidden="true">☼</span>
-          <h3 class="goal__title">Identity &amp; Pride</h3>
-          <p>Reclaiming <em>Chicano</em> as a source of dignity and forging a shared
-            cultural homeland: Aztlán.</p>
-        </article>
-
-        <article class="goal">
-          <span class="goal__icon" aria-hidden="true">▲</span>
-          <h3 class="goal__title">Political Power</h3>
-          <p>Representation through new vehicles like <em>La Raza Unida</em> &mdash; a
-            party run by and for the community.</p>
-        </article>
-
-        <article class="goal goal--quote">
-          <!-- INTEGRATED PRIMARY SOURCE #2 -->
-          <span class="source__tag">Primary Source</span>
-          <blockquote class="source__quote source__quote--sm">
-            &ldquo;[ Insert a verified line of demands &mdash; e.g., from <em>El Plan de
-            Delano</em> (1966). ]&rdquo;
-          </blockquote>
-          <p class="source__cite-inline">
-            <span class="source__doc">El Plan de Delano</span> · 1966 ·
-            <span class="source__why-inline">[ note its significance ]</span>
-          </p>
-        </article>
-      </div>
+      <!-- Modular goal grid: one card per cards.goals -->
+      <div class="cause__grid" data-cards="goals" data-template="tpl-goal"></div>
     </section>
 
     <!-- ============================== VOICES (LEADERS) ============================== -->
     <section class="section section--voices" id="voices">
       <div class="section__head">
-        <span class="section__num">03</span>
-        <p class="eyebrow">Profile the Leaders</p>
-        <h2 class="section__title">Voices of the Movement</h2>
+        <span class="section__num" data-text="voicesNum"></span>
+        <p class="eyebrow" data-text="voicesEyebrow"></p>
+        <h2 class="section__title" data-text="voicesTitle"></h2>
       </div>
 
-      <div class="voices__grid">
-        <!-- LEADER 1 -->
-        <article class="leader">
-          <div class="leader__portrait" aria-hidden="true">
-            <span class="leader__initials">CC</span>
-          </div>
-          <div class="leader__body">
-            <h3 class="leader__name">César Chávez</h3>
-            <p class="leader__role">Co-founder, United Farm Workers</p>
-            <p>Led the Delano grape boycott and championed nonviolent protest,
-              fasting, and <em>la huelga</em> (the strike) to win dignity for farm laborers.</p>
-            <!-- INTEGRATED PRIMARY SOURCE #3 -->
-            <div class="source source--mini">
-              <span class="source__tag">Primary Source</span>
-              <p class="source__quote source__quote--xs">&ldquo;[ Insert a verified Chávez quote &mdash;
-                e.g., from his 1968 fast statement or a UFW speech. ]&rdquo;</p>
-              <p class="source__cite-inline"><span class="source__doc">[ Speech / Letter title ]</span> · [ year ]</p>
-            </div>
-          </div>
-        </article>
-
-        <!-- LEADER 2 -->
-        <article class="leader">
-          <div class="leader__portrait" aria-hidden="true">
-            <span class="leader__initials">DH</span>
-          </div>
-          <div class="leader__body">
-            <h3 class="leader__name">Dolores Huerta</h3>
-            <p class="leader__role">Co-founder, United Farm Workers</p>
-            <p>Master organizer and lobbyist who coined the rallying cry
-              <em>&ldquo;¡Sí, se puede!&rdquo;</em> and negotiated the union's first contracts.</p>
-          </div>
-        </article>
-
-        <!-- LEADER 3 -->
-        <article class="leader">
-          <div class="leader__portrait" aria-hidden="true">
-            <span class="leader__initials">RG</span>
-          </div>
-          <div class="leader__body">
-            <h3 class="leader__name">Rodolfo &ldquo;Corky&rdquo; Gonzales</h3>
-            <p class="leader__role">Founder, Crusade for Justice</p>
-            <p>Boxer-turned-activist whose epic poem <em>I Am Joaquín</em> (1967)
-              gave the movement a literary and spiritual voice.</p>
-            <!-- INTEGRATED PRIMARY SOURCE #4 -->
-            <div class="source source--mini">
-              <span class="source__tag">Primary Source</span>
-              <p class="source__quote source__quote--xs">&ldquo;[ Insert verified lines from
-                <em>I Am Joaquín</em> (1967). ]&rdquo;</p>
-              <p class="source__cite-inline"><span class="source__doc">I Am Joaquín</span> · 1967</p>
-            </div>
-          </div>
-        </article>
-
-        <!-- LEADER 4 -->
-        <article class="leader">
-          <div class="leader__portrait" aria-hidden="true">
-            <span class="leader__initials">RT</span>
-          </div>
-          <div class="leader__body">
-            <h3 class="leader__name">Reies López Tijerina</h3>
-            <p class="leader__role">Leader, Alianza Federal de Mercedes</p>
-            <p>Fought to reclaim Spanish and Mexican land grants in New Mexico,
-              drawing national attention to broken treaty promises.</p>
-          </div>
-        </article>
-
-        <!-- LEADER 5 -->
-        <article class="leader">
-          <div class="leader__portrait" aria-hidden="true">
-            <span class="leader__initials">JG</span>
-          </div>
-          <div class="leader__body">
-            <h3 class="leader__name">José Ángel Gutiérrez</h3>
-            <p class="leader__role">Co-founder, La Raza Unida Party</p>
-            <p>Built independent Chicano political power in Texas, winning local
-              elections and a seat at the table long denied his community.</p>
-          </div>
-        </article>
-      </div>
+      <!-- Modular leader grid: one card per cards.leaders -->
+      <div class="voices__grid" data-cards="leaders" data-template="tpl-leader"></div>
     </section>
 
     <!-- ============================== FLASHPOINTS (KEY EVENTS) ============================== -->
     <section class="section section--flashpoints" id="flashpoints">
       <div class="section__head section__head--light">
-        <span class="section__num">04</span>
-        <p class="eyebrow eyebrow--light">Key Events</p>
-        <h2 class="section__title">Flashpoints</h2>
-        <p class="section__intro">The moments that turned a community's frustration
-          into a national movement.</p>
+        <span class="section__num" data-text="flashNum"></span>
+        <p class="eyebrow eyebrow--light" data-text="flashEyebrow"></p>
+        <h2 class="section__title" data-text="flashTitle"></h2>
+        <p class="section__intro" data-text="flashIntro"></p>
       </div>
 
-      <ol class="timeline">
-        <li class="event">
-          <span class="event__year">1965</span>
-          <div class="event__content">
-            <h3 class="event__title">The Delano Grape Strike</h3>
-            <p>Filipino and Mexican farmworkers walk off the vineyards of California's
-              Central Valley, launching a five-year strike and national grape boycott.</p>
-          </div>
-        </li>
-
-        <li class="event">
-          <span class="event__year">1968</span>
-          <div class="event__content">
-            <h3 class="event__title">The East L.A. Walkouts</h3>
-            <p>Tens of thousands of students walk out of Los Angeles high schools
-              demanding equal education &mdash; the &ldquo;Blowouts.&rdquo;</p>
-            <!-- INTEGRATED PRIMARY SOURCE #5 -->
-            <figure class="source source--inline">
-              <span class="source__tag">Primary Source</span>
-              <blockquote class="source__quote source__quote--sm">
-                &ldquo;[ Insert a verified demand from the student walkout list, 1968. ]&rdquo;
-              </blockquote>
-              <figcaption class="source__cite">
-                <span class="source__doc">East L.A. Walkout Student Demands</span>
-                <span class="source__detail">List of demands · 1968</span>
-                <span class="source__why"><strong>Why it matters:</strong> [ Explain how these
-                demands exposed inequality in the schools. ]</span>
-              </figcaption>
-            </figure>
-          </div>
-        </li>
-
-        <li class="event">
-          <span class="event__year">1969</span>
-          <div class="event__content">
-            <h3 class="event__title">National Chicano Youth Conference</h3>
-            <p>In Denver, young activists adopt <em>El Plan Espiritual de Aztlán</em>,
-              declaring cultural unity and self-determination.</p>
-          </div>
-        </li>
-
-        <li class="event">
-          <span class="event__year">1970</span>
-          <div class="event__content">
-            <h3 class="event__title">The Chicano Moratorium</h3>
-            <p>Over 20,000 march in Los Angeles against the Vietnam War and its toll
-              on the Chicano community; journalist Rubén Salazar is killed.</p>
-          </div>
-        </li>
-      </ol>
+      <!-- Modular timeline: one event per cards.events -->
+      <ol class="timeline" data-cards="events" data-template="tpl-event"></ol>
     </section>
 
     <!-- ============================== LEGACY ============================== -->
     <section class="section section--legacy" id="legacy">
       <div class="legacy__inner">
-        <p class="eyebrow eyebrow--light">Legacy</p>
-        <h2 class="legacy__title">The Eagle Still Flies</h2>
-        <p class="legacy__text">
-          By 1973 the movement had reshaped American life &mdash; farm labor law,
-          bilingual education, Chicano studies, and a generation of leaders who refused
-          to be invisible. <span class="legacy__accent">¡La lucha continúa!</span>
-        </p>
+        <p class="eyebrow eyebrow--light" data-text="legacyEyebrow"></p>
+        <h2 class="legacy__title" data-text="legacyTitle"></h2>
+        <p class="legacy__text" data-text="legacyText"></p>
       </div>
     </section>
   </main>
@@ -367,14 +136,77 @@
   <!-- ============================== FOOTER ============================== -->
   <footer class="footer">
     <div class="footer__inner">
-      <p class="footer__brand">El&nbsp;Movimiento ★ 1960&ndash;1973</p>
-      <p class="footer__note">
-        A student research project. Every quotation, image, and fact on this site is
-        documented in our <a href="#">Annotated Bibliography (MLA)</a>.
-      </p>
-      <p class="footer__small">Built with vanilla HTML, CSS &amp; JavaScript.</p>
+      <p class="footer__brand" data-text="footerBrand"></p>
+      <p class="footer__note" data-text="footerNote"></p>
+      <p class="footer__small" data-text="footerSmall"></p>
     </div>
   </footer>
+
+  <!-- =====================================================================
+       CARD TEMPLATES
+       The JS clones one of these per item in the matching cards.* array.
+       - data-field="x"      → filled with item.x (element removed if x is empty)
+       - data-show-if="x"    → whole block removed unless item.x has a value
+       Every card also honors optional item.bg (background) and item.color (text).
+       ===================================================================== -->
+
+  <!-- Hero slogan tag -->
+  <template id="tpl-meta">
+    <span class="hero__meta-item" data-field="label"></span>
+  </template>
+
+  <!-- Quick fact -->
+  <template id="tpl-fact">
+    <li class="facts__item">
+      <span class="facts__num" data-field="num"></span>
+      <span class="facts__label" data-field="label"></span>
+    </li>
+  </template>
+
+  <!-- Goal card (set bg + tag to turn it into a highlighted primary-source card) -->
+  <template id="tpl-goal">
+    <article class="goal">
+      <span class="goal__icon" data-field="icon" aria-hidden="true"></span>
+      <span class="source__tag" data-field="tag"></span>
+      <h3 class="goal__title" data-field="title"></h3>
+      <p data-field="text"></p>
+    </article>
+  </template>
+
+  <!-- Leader card (optional integrated primary-source quote) -->
+  <template id="tpl-leader">
+    <article class="leader">
+      <div class="leader__portrait" aria-hidden="true">
+        <span class="leader__initials" data-field="initials"></span>
+      </div>
+      <div class="leader__body">
+        <h3 class="leader__name" data-field="name"></h3>
+        <p class="leader__role" data-field="role"></p>
+        <p data-field="bio"></p>
+        <div class="source source--mini" data-show-if="quote">
+          <span class="source__tag">Primary Source</span>
+          <p class="source__quote source__quote--xs" data-field="quote"></p>
+          <p class="source__cite-inline" data-field="quoteCite"></p>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <!-- Timeline event (optional integrated primary-source quote) -->
+  <template id="tpl-event">
+    <li class="event">
+      <span class="event__year" data-field="year"></span>
+      <div class="event__content">
+        <h3 class="event__title" data-field="title"></h3>
+        <p data-field="text"></p>
+        <figure class="source source--inline" data-show-if="quote">
+          <span class="source__tag">Primary Source</span>
+          <blockquote class="source__quote source__quote--sm" data-field="quote"></blockquote>
+          <figcaption class="source__cite-inline" data-field="quoteCite"></figcaption>
+        </figure>
+      </div>
+    </li>
+  </template>
 
   <script src="js/main.js"></script>
 </body>

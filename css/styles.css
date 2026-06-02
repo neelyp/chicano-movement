@@ -113,6 +113,22 @@ img { max-width: 100%; display: block; }
   transition: width 0.1s linear;
 }
 
+/* Content-load error banner (shown only if content.json can't be fetched) */
+.error-banner {
+  position: relative;
+  z-index: 500;
+  margin: 0;
+  padding: 0.9rem var(--gutter);
+  background: var(--red);
+  color: var(--cream);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  text-align: center;
+}
+.error-banner code { background: rgba(0, 0, 0, 0.25); padding: 0.05em 0.35em; border-radius: 2px; }
+.error-banner__detail { opacity: 0.7; }
+
 /* Eyebrow / kicker label */
 .eyebrow {
   font-family: var(--font-mono);
@@ -290,7 +306,14 @@ img { max-width: 100%; display: block; }
   text-transform: uppercase;
   color: var(--marigold);
 }
-.hero__meta-rule {
+.hero__meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+/* Separator rule before every tag except the first */
+.hero__meta-item:not(:first-child)::before {
+  content: "";
   width: 34px; height: 2px;
   background: var(--red-bright);
 }
@@ -433,12 +456,8 @@ img { max-width: 100%; display: block; }
   color: var(--cream);
 }
 .goal p { color: rgba(250, 243, 227, 0.78); font-size: 1rem; }
-.goal--quote {
-  background: var(--red);
-  border-color: var(--red);
-  grid-column: span 1;
-}
-.goal--quote:hover { transform: translateY(-6px); border-color: var(--marigold); }
+/* A goal card becomes a highlighted primary-source card simply by setting
+   "bg" (and usually "color") on its item in content.json — no extra class. */
 
 /* ====================== 9. VOICES (leaders) ====================== */
 .voices__grid {
@@ -553,7 +572,7 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--cream);
-  background: var(--red);
+  background: var(--ink);
   padding: 0.28rem 0.6rem;
   margin-bottom: 0.9rem;
   border-radius: 2px;
@@ -613,15 +632,6 @@ img { max-width: 100%; display: block; }
 }
 .source--inline .source__cite-inline { color: var(--ink-soft); }
 .source__cite-inline .source__doc { text-transform: uppercase; }
-
-/* Quote card inside the dark Cause grid */
-.goal--quote .source__tag { background: var(--ink); }
-.goal--quote .source__quote {
-  color: var(--cream);
-  font-size: 1.05rem;
-}
-.goal--quote .source__cite-inline { color: rgba(250, 243, 227, 0.85); }
-.goal--quote .source__cite-inline .source__doc { color: var(--marigold); }
 
 /* Mini source inside leader cards */
 .source--mini {

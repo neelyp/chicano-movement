@@ -1,0 +1,132 @@
+{
+  "text": {
+    "heroEyebrow": "United States · 1960–1973",
+    "heroTitleTop": "El",
+    "heroTitleBottom": "Movimiento",
+    "heroSub": "Write a one- or two-sentence introduction to the movement here.",
+
+    "whoNum": "01",
+    "whoEyebrow": "Identify the Group",
+    "whoTitle": "Who They Were",
+    "whoLede": "Write your opening line — who were they?",
+    "whoBody": "Add your researched description of the group here.",
+
+    "causeNum": "02",
+    "causeEyebrow": "Goals of the Movement",
+    "causeTitle": "The Cause",
+    "causeIntro": "Briefly introduce what the movement was fighting for.",
+
+    "voicesNum": "03",
+    "voicesEyebrow": "Profile the Leaders",
+    "voicesTitle": "Voices of the Movement",
+
+    "flashNum": "04",
+    "flashEyebrow": "Key Events",
+    "flashTitle": "Flashpoints",
+    "flashIntro": "Introduce the major events of the movement.",
+
+    "legacyEyebrow": "Legacy",
+    "legacyTitle": "Section heading",
+    "legacyText": "Summarize the movement's lasting impact here.",
+
+    "footerBrand": "El Movimiento ★ 1960–1973",
+    "footerNote": "A student research project. Every quotation, image, and fact is documented in our Annotated Bibliography (MLA)."
+  },
+
+  "cards": {
+    "meta": [
+      { "label": "Slogan one" },
+      { "label": "Slogan two" },
+      { "label": "Slogan three" }
+    ],
+
+    "facts": [
+      { "num": "0000", "label": "What this number means" },
+      { "num": "00", "label": "What this number means" },
+      { "num": "0000", "label": "What this number means" },
+      { "num": "00k", "label": "What this number means" }
+    ],
+
+    "goals": [
+      {
+        "icon": "✊",
+        "title": "Goal title",
+        "text": "Describe this goal in a sentence."
+      },
+      {
+        "icon": "✺",
+        "title": "Goal title",
+        "text": "Describe this goal in a sentence."
+      },
+      {
+        "icon": "✎",
+        "title": "Goal title",
+        "text": "Describe this goal in a sentence."
+      },
+      {
+        "icon": "☼",
+        "title": "Goal title",
+        "text": "Describe this goal in a sentence."
+      },
+      {
+        "icon": "▲",
+        "title": "Goal title",
+        "text": "Describe this goal in a sentence."
+      },
+      {
+        "tag": "Primary Source",
+        "text": "“Paste a short primary-source quote here.” — Document title, year",
+        "bg": "#9e2b25",
+        "color": "#faf3e3"
+      }
+    ],
+
+    "leaders": [
+      {
+        "initials": "AB",
+        "name": "Leader name",
+        "role": "Their role / organization",
+        "bio": "A few sentences about who they were and what they did."
+      },
+      {
+        "initials": "CD",
+        "name": "Leader name",
+        "role": "Their role / organization",
+        "bio": "A few sentences about who they were and what they did.",
+        "quote": "“Paste a verified quote from this leader.”",
+        "quoteCite": "Speech or letter title · year"
+      },
+      {
+        "initials": "EF",
+        "name": "Leader name",
+        "role": "Their role / organization",
+        "bio": "A few sentences about who they were and what they did."
+      }
+    ],
+
+    "events": [
+      {
+        "year": "0000",
+        "title": "Event title",
+        "text": "Describe what happened and why it mattered."
+      },
+      {
+        "year": "0000",
+        "title": "Event title",
+        "text": "Describe what happened and why it mattered.",
+        "quote": "“Paste a primary-source excerpt tied to this event.”",
+        "quoteCite": "Document title · year"
+      },
+      {
+        "year": "0000",
+        "title": "Event title",
+        "text": "Describe what happened and why it mattered."
+      },
+      {
+        "year": "0000",
+        "title": "Event title",
+        "text": "Describe what happened and why it mattered."
+      }
+    ]
+  }
+}
