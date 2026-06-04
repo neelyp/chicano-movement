@@ -6,10 +6,10 @@
     "heroSub": "A website dedicated to one of the most prominent movements in United States history.",
 
     "whoNum": "01",
-    "whoEyebrow": "Identify the Group",
-    "whoTitle": "Who They Were",
-    "whoLede": "Write your opening line — who were they?",
-    "whoBody": "Add your researched description of the group here.",
+    "whoEyebrow": "United Farm Workers",
+    "whoTitle": "If you want to remember me, organize.",
+    "whoLede": "Founded by César Chávez & Dolores Huerta",
+    "whoBody": "The United Farm Workers (UFW), successor of the National Farm Workers Association (NFWA), was the organized collaboration between many Chicano activists, advocating for the defense of farmworkers through nonviolent tactics including marches, national boycotts, and fasts. As the movement gained national attention, the group were able to receive better working conditions and higher wages from newly signed contracts.",
 
     "causeNum": "02",
     "causeEyebrow": "Goals of the Movement",
@@ -41,10 +41,9 @@
     ],
 
     "facts": [
-      { "num": "0000", "label": "What this number means" },
-      { "num": "00", "label": "What this number means" },
-      { "num": "0000", "label": "What this number means" },
-      { "num": "00k", "label": "What this number means" }
+      { "num": "$52M", "label": "In relief payments for farm workers affected by COVID-19" },
+      { "num": "13,397", "label": "Individuals given free/low-cost immigration legal services." },
+      { "num": "185K+", "label": "Services delivered by the UFW Foundation." },
     ],
 
     "goals": [
