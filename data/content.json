@@ -43,7 +43,8 @@
     "facts": [
       { "num": "$52M", "label": "In relief payments for farm workers affected by COVID-19" },
       { "num": "13,397", "label": "Individuals given free/low-cost immigration legal services." },
-      { "num": "185K+", "label": "Services delivered by the UFW Foundation." }
+      { "num": "185K+", "label": "Services delivered by the UFW Foundation." },
+      { "num": "30K+", "label": "New contracts for higher wages, safer working conditions, and better healthcare plans." }
     ],
 
     "goals": [
