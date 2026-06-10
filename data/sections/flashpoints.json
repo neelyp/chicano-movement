@@ -1,0 +1,33 @@
+{
+  "text": {
+    "flashNum": "04",
+    "flashEyebrow": "Key Events",
+    "flashTitle": "Flashpoints",
+    "flashIntro": "Introduce the major events of the movement."
+  },
+
+  "cards": {
+    "events": [
+      {
+        "year": "0000",
+        "title": "Event title",
+        "text": "Describe what happened and why it mattered."
+      },
+      {
+        "year": "0000",
+        "title": "Event title",
+        "text": "Describe what happened and why it mattered."
+      },
+      {
+        "year": "0000",
+        "title": "Event title",
+        "text": "Describe what happened and why it mattered."
+      },
+      {
+        "year": "0000",
+        "title": "Event title",
+        "text": "Describe what happened and why it mattered."
+      }
+    ]
+  }
+}

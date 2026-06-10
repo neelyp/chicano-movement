@@ -1,6 +1,6 @@
 /* =====================================================================
    EL MOVIMIENTO — site logic
-   1. Load content.json and render the page from it
+   1. Load the per-section JSON files and render the page from them
         · fillText()    — text slots          [data-text]
         · renderCards() — modular card lists   [data-cards] + <template>
    2. Mobile nav toggle
@@ -8,6 +8,12 @@
    4. Scroll-reveal animations
    5. Reading-progress bar
    ===================================================================== */
+
+/* Each page section lives in its own data/sections/<name>.json file so that
+   editors can work on different sections without colliding in git. To add a
+   section, drop in a new file and list its name here. Every file has the
+   shape { "text": { … }, "cards": { … } } (either key may be omitted). */
+const SECTIONS = ["hero", "who", "cause", "voices", "flashpoints", "legacy", "footer"];
 
 document.addEventListener("DOMContentLoaded", init);
 
@@ -24,14 +30,29 @@ async function init() {
    ===================================================================== */
 async function loadContent() {
   try {
-    const res = await fetch("data/content.json", { cache: "no-store" });
-    if (!res.ok) throw new Error("HTTP " + res.status);
-    const content = await res.json();
-    fillText(content.text || {});
-    renderCards(content.cards || {});
+    // Fetch every section file in parallel, then merge them back into the
+    // single { text, cards } shape the renderers expect.
+    const sections = await Promise.all(SECTIONS.map(loadSection));
+
+    const text = {};
+    const cards = {};
+    sections.forEach(function (section) {
+      Object.assign(text, section.text);
+      Object.assign(cards, section.cards);
+    });
+
+    fillText(text);
+    renderCards(cards);
   } catch (err) {
     showContentError(err);
   }
+}
+
+/* Fetch and parse one data/sections/<name>.json file. */
+async function loadSection(name) {
+  const res = await fetch("data/sections/" + name + ".json", { cache: "no-store" });
+  if (!res.ok) throw new Error(name + ".json — HTTP " + res.status);
+  return res.json();
 }
 
 /* Fill every [data-text="key"] element from content.text[key]. */
@@ -88,9 +109,9 @@ function showContentError(err) {
   banner.innerHTML =
     "<strong>Content didn’t load.</strong> Open this site through a local " +
     "web server (e.g. VS Code “Live Server”) rather than double-clicking the " +
-    "file — browsers block <code>data/content.json</code> on <code>file://</code>. " +
+    "file — browsers block the <code>data/sections/</code> files on <code>file://</code>. " +
     "<span class='error-banner__detail'>(" + err.message + ")</span>";
-  console.error("Failed to load content.json:", err);
+  console.error("Failed to load section content:", err);
 }
 
 /* =====================================================================

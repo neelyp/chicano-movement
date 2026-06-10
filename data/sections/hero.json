@@ -1,0 +1,16 @@
+{
+  "text": {
+    "heroEyebrow": "United States · 1960–1973",
+    "heroTitleTop": "El",
+    "heroTitleBottom": "Movimiento",
+    "heroSub": "A website dedicated to one of the most prominent movements in United States history."
+  },
+
+  "cards": {
+    "meta": [
+      { "label": "Slogan one" },
+      { "label": "Slogan two" },
+      { "label": "Slogan three" }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "text": {
+    "causeNum": "02",
+    "causeEyebrow": "Goals of the Movement",
+    "causeTitle": "El Plan Espiritual de Aztlan",
+    "causeIntro": "The foundational document calling for the self-determination of the Chicano race, serving as a philosophical blueprint for the rise of the Chicano Movement."
+  },
+
+  "cards": {
+    "goals": [
+      {
+        "icon": "✊",
+        "title": "Unity",
+        "text": "The Chicano population must be unified, whether it be farmers, the upper or middle class, or the unemployed. Strength lies within continued commitment to liberating the race."
+      },
+      {
+        "icon": "✺",
+        "title": "Economic Control",
+        "text": "To secure economic prosperity amongst all Chicanos, exploiters must be removed and controlled. To succeed means ignoring materialism, embracing humanism, and providing an equal distribution of resources to improve the welfare of all of the community."
+      },
+      {
+        "icon": "✎",
+        "title": "Education",
+        "text": "All education must be relevant to Chicano history, culture, and preserving language. The power of the community starts with keeping it taught."
+      },
+      {
+        "icon": "☼",
+        "title": "Restitution",
+        "text": "For the discrimination, economic slavery, denial of rights, and utmost exploitation, Chicanos as a people must receive reparations through the establishment of institutions that support the development of Chicano citizens."
+      },
+      {
+        "icon": "▲",
+        "title": "Political Representation",
+        "text": "In order to continue supporting Los Chicanos, political representation must be secured through utmost unification. Local organizations and movements must combine to form one giant family. That way, the struggles of everyday citizens in the community will not be tied to those most fueled by money and power."
+      },
+      {
+        "tag": "Liberation",
+        "text": "“A nation autonomously free, culturally, socially, economically and politically will make its own decisions on the usage of our lands, the taxation of our goods, the utilization of our bodies for war, the determination of justice (reward and punishment), and the profit of our sweat. EL PLAN DE AZTLAN IS THE PLAN OF LIBERATION” (Urista and Gonzales)! — El plan espiritual de Aztlan, 1969",
+        "bg": "#9e2b25",
+        "color": "#faf3e3"
+      }
+    ]
+  }
+}
