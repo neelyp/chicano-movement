@@ -1,33 +1,52 @@
-{
-  "text": {
-    "flashNum": "04",
-    "flashEyebrow": "Key Events",
-    "flashTitle": "Flashpoints",
-    "flashIntro": "Introduce the major events of the movement."
+[
+  {
+    "year": "1962",
+    "title": "National Farm Workers Association Founded",
+    "text": "On September 30, 1962 Cesar Chavez and Dolores Huerta held the founding convention of the National Farm Workers Association (NFWA) in Fresno, California. They adopted the motto \"Viva la Causa!\" which means \"Long Live the Cause.\" The union set up its headquarters in Delano. It later became part of the United Farm Workers and one of the main organizations of the Chicano movement."
   },
-
-  "cards": {
-    "events": [
-      {
-        "year": "0000",
-        "title": "Event title",
-        "text": "Describe what happened and why it mattered."
-      },
-      {
-        "year": "0000",
-        "title": "Event title",
-        "text": "Describe what happened and why it mattered."
-      },
-      {
-        "year": "0000",
-        "title": "Event title",
-        "text": "Describe what happened and why it mattered."
-      },
-      {
-        "year": "0000",
-        "title": "Event title",
-        "text": "Describe what happened and why it mattered."
-      }
-    ]
+  {
+    "year": "1965",
+    "title": "End of the Bracero Program and the Grape Boycott",
+    "text": "The U.S. government ended the Bracero Program in late 1964. Growers had used that program to replace farmworkers who protested, so ending it gave the new union real leverage. The grape boycott began on September 16, 1965, and brought national attention to the farmworkers' cause."
+  },
+  {
+    "year": "1966",
+    "title": "Pilgrimage from Delano to Sacramento",
+    "text": "On March 17, 1966, Chávez and roughly 100 farmworkers set out on a 300-mile march from Delano to the state capitol in Sacramento. Television covered the march, which ended on Easter Sunday, April 11, 1966. By then more than 10,000 supporters had gathered, carrying the union flag and images of the Virgen de Guadalupe."
+  },
+  {
+    "year": "1966",
+    "title": "Schenley Recognizes the Union",
+    "text": "On April 3, 1966, Schenley Industries recognized Chávez's union and agreed to raise wages and improve working conditions. It was the first time a major corporation had recognized a farmworkers' union."
+  },
+  {
+    "year": "1966",
+    "title": "Formation of the UFWOC",
+    "text": "On August 22, 1966, the Filipino Agricultural Workers Organizing Committee (AWOC) merged with the National Farm Workers Association. The new group, the United Farm Workers Organizing Committee (UFWOC), brought Filipino and Mexican American farmworkers into a single union."
+  },
+  {
+    "year": "1968",
+    "title": "César Chávez's Fast for Nonviolence",
+    "text": "On February 14, 1968, César Chávez began a fast to protest the treatment of farmworkers and to keep the movement nonviolent. Martin Luther King Jr. sent his support. Chávez ended the 25-day fast on March 10, 1968, with Robert Kennedy sitting next to him."
+  },
+  {
+    "year": "1970",
+    "title": "Grape Growers Sign Contracts",
+    "text": "In December 1970, About 150 California grape growers signed contracts with the UFWOC. They included Giumarra Vineyards, the largest grower. The contracts gave farmworkers higher pay, healthcare benefits, and protection from pesticide exposure, and they were a major win for the grape boycott."
+  },
+  {
+    "year": "1972",
+    "title": "United Farm Workers Founded and Proposition 22 Defeated",
+    "text": "In 1972, The UFWOC changed its name to the United Farm Workers (UFW). That same year it campaigned against Proposition 22, a ballot measure that would have limited farmworkers' right to protest, and helped defeat it."
+  },
+  {
+    "year": "1975",
+    "title": "Agricultural Labor Relations Act",
+    "text": "In June 1975, The Agricultural Labor Relations Act gave farmworkers the right to elect their own union representatives."
+  },
+  {
+    "year": "1993",
+    "title": "Death of César Chávez",
+    "text": "On April 23, 1993, César Chávez died. His son-in-law, Arturo Rodriguez, took over as president of the United Farm Workers."
   }
-}
+]
