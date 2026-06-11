@@ -1,148 +1,177 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="El Movimiento — the Chicano Movement, 1960–1973. A student research project." />
-  <title>El Movimiento — The Chicano Movement, 1960–1973</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="El Movimiento — the Chicano Movement, 1960–1973. A student research project."
+    />
+    <title>El Movimiento — The Chicano Movement, 1960–1973</title>
 
-  <!-- Fonts: Anton (poster display), Spectral (editorial serif), DM Mono (archival labels) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400;500&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+    <!-- Fonts: Anton (poster display), Spectral (editorial serif), DM Mono (archival labels) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400;500&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
-<body>
-  <!-- Grain / paper texture overlay sits above everything -->
-  <div class="grain" aria-hidden="true"></div>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Grain / paper texture overlay sits above everything -->
+    <div class="grain" aria-hidden="true"></div>
 
-  <!-- Reading progress bar -->
-  <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
-
-  <!-- Shown only if the section content fails to load (e.g. opened via file://) -->
-  <div class="error-banner" id="error-banner" hidden></div>
-
-  <!-- ============================== NAV ============================== -->
-  <header class="nav" id="nav">
-    <a href="#top" class="nav__brand">
-      <span class="nav__brand-mark" aria-hidden="true">★</span>
-      <span class="nav__brand-text">El&nbsp;Movimiento</span>
-    </a>
-
-    <nav class="nav__links" id="nav-links" aria-label="Primary">
-      <a href="#who">Who&nbsp;They&nbsp;Were</a>
-      <a href="#cause">The&nbsp;Cause</a>
-      <a href="#voices">Voices</a>
-      <a href="#flashpoints">Flashpoints</a>
-      <a href="#legacy">Legacy</a>
-    </nav>
-
-    <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
-      <span></span><span></span><span></span>
-    </button>
-  </header>
-
-  <!-- ============================== HERO ============================== -->
-  <main id="top">
-    <section class="hero">
-      <div class="hero__sun" aria-hidden="true"></div>
-
-      <div class="hero__inner">
-        <p class="eyebrow eyebrow--light" data-text="heroEyebrow"></p>
-
-        <h1 class="hero__title">
-          <span class="hero__line" data-text="heroTitleTop"></span>
-          <span class="hero__line hero__line--accent" data-text="heroTitleBottom"></span>
-        </h1>
-
-        <p class="hero__sub" data-text="heroSub"></p>
-
-        <!-- Modular: one tag per item in cards.meta -->
-        <div class="hero__meta" data-cards="meta" data-template="tpl-meta"></div>
-      </div>
-
-      <a href="#who" class="hero__scroll" aria-label="Scroll to content">
-        <span>Scroll</span>
-        <span class="hero__scroll-arrow" aria-hidden="true">↓</span>
-      </a>
-    </section>
-
-    <!-- ============================== WHO THEY WERE ============================== -->
-    <section class="section section--who" id="who">
-      <div class="section__head">
-        <span class="section__num" data-text="whoNum"></span>
-        <p class="eyebrow" data-text="whoEyebrow"></p>
-        <h2 class="section__title" data-text="whoTitle"></h2>
-      </div>
-
-      <div class="who__lede">
-        <p class="lede" data-text="whoLede"></p>
-        <p data-text="whoBody"></p>
-      </div>
-
-      <!-- Modular quick-facts strip: one item per cards.facts -->
-      <ul class="facts" data-cards="facts" data-template="tpl-fact"></ul>
-    </section>
-
-    <!-- ============================== THE CAUSE (GOALS) ============================== -->
-    <section class="section section--cause" id="cause">
-      <div class="section__head section__head--light">
-        <span class="section__num" data-text="causeNum"></span>
-        <p class="eyebrow eyebrow--light" data-text="causeEyebrow"></p>
-        <h2 class="section__title" data-text="causeTitle"></h2>
-        <p class="section__intro" data-text="causeIntro"></p>
-      </div>
-
-      <!-- Modular goal grid: one card per cards.goals -->
-      <div class="cause__grid" data-cards="goals" data-template="tpl-goal"></div>
-    </section>
-
-    <!-- ============================== VOICES (LEADERS) ============================== -->
-    <section class="section section--voices" id="voices">
-      <div class="section__head">
-        <span class="section__num" data-text="voicesNum"></span>
-        <p class="eyebrow" data-text="voicesEyebrow"></p>
-        <h2 class="section__title" data-text="voicesTitle"></h2>
-      </div>
-
-      <!-- Modular leader grid: one card per cards.leaders -->
-      <div class="voices__grid" data-cards="leaders" data-template="tpl-leader"></div>
-    </section>
-
-    <!-- ============================== FLASHPOINTS (KEY EVENTS) ============================== -->
-    <section class="section section--flashpoints" id="flashpoints">
-      <div class="section__head section__head--light">
-        <span class="section__num" data-text="flashNum"></span>
-        <p class="eyebrow eyebrow--light" data-text="flashEyebrow"></p>
-        <h2 class="section__title" data-text="flashTitle"></h2>
-        <p class="section__intro" data-text="flashIntro"></p>
-      </div>
-
-      <!-- Modular timeline: one event per cards.events -->
-      <ol class="timeline" data-cards="events" data-template="tpl-event"></ol>
-    </section>
-
-    <!-- ============================== LEGACY ============================== -->
-    <section class="section section--legacy" id="legacy">
-      <div class="legacy__inner">
-        <p class="eyebrow eyebrow--light" data-text="legacyEyebrow"></p>
-        <h2 class="legacy__title" data-text="legacyTitle"></h2>
-        <p class="legacy__text" data-text="legacyText"></p>
-      </div>
-    </section>
-  </main>
-
-  <!-- ============================== FOOTER ============================== -->
-  <footer class="footer">
-    <div class="footer__inner">
-      <p class="footer__brand" data-text="footerBrand"></p>
-      <p class="footer__note" data-text="footerNote"></p>
-      <p class="footer__small" data-text="footerSmall"></p>
+    <!-- Reading progress bar -->
+    <div class="progress" aria-hidden="true">
+      <span id="progress-bar"></span>
     </div>
-  </footer>
 
-  <!-- =====================================================================
+    <!-- Shown only if the section content fails to load (e.g. opened via file://) -->
+    <div class="error-banner" id="error-banner" hidden></div>
+
+    <!-- ============================== NAV ============================== -->
+    <header class="nav" id="nav">
+      <a href="#top" class="nav__brand">
+        <span class="nav__brand-mark" aria-hidden="true">★</span>
+        <span class="nav__brand-text">El&nbsp;Movimiento</span>
+      </a>
+
+      <nav class="nav__links" id="nav-links" aria-label="Primary">
+        <a href="#who">Who&nbsp;They&nbsp;Were</a>
+        <a href="#cause">The&nbsp;Cause</a>
+        <a href="#voices">Voices</a>
+        <a href="#timeline">timeline</a>
+        <a href="#legacy">Legacy</a>
+      </nav>
+
+      <button
+        class="nav__toggle"
+        id="nav-toggle"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="nav-links"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <!-- ============================== HERO ============================== -->
+    <main id="top">
+      <section class="hero">
+        <div class="hero__sun" aria-hidden="true"></div>
+
+        <div class="hero__inner">
+          <p class="eyebrow eyebrow--light" data-text="heroEyebrow"></p>
+
+          <h1 class="hero__title">
+            <span class="hero__line" data-text="heroTitleTop"></span>
+            <span
+              class="hero__line hero__line--accent"
+              data-text="heroTitleBottom"
+            ></span>
+          </h1>
+
+          <p class="hero__sub" data-text="heroSub"></p>
+
+          <!-- Modular: one tag per item in cards.meta -->
+          <div
+            class="hero__meta"
+            data-cards="meta"
+            data-template="tpl-meta"
+          ></div>
+        </div>
+
+        <a href="#who" class="hero__scroll" aria-label="Scroll to content">
+          <span>Scroll</span>
+          <span class="hero__scroll-arrow" aria-hidden="true">↓</span>
+        </a>
+      </section>
+
+      <!-- ============================== WHO THEY WERE ============================== -->
+      <section class="section section--who" id="who">
+        <div class="section__head">
+          <span class="section__num" data-text="whoNum"></span>
+          <p class="eyebrow" data-text="whoEyebrow"></p>
+          <h2 class="section__title" data-text="whoTitle"></h2>
+        </div>
+
+        <div class="who__lede">
+          <p class="lede" data-text="whoLede"></p>
+          <p data-text="whoBody"></p>
+        </div>
+
+        <!-- Modular quick-facts strip: one item per cards.facts -->
+        <ul class="facts" data-cards="facts" data-template="tpl-fact"></ul>
+      </section>
+
+      <!-- ============================== THE CAUSE (GOALS) ============================== -->
+      <section class="section section--cause" id="cause">
+        <div class="section__head section__head--light">
+          <span class="section__num" data-text="causeNum"></span>
+          <p class="eyebrow eyebrow--light" data-text="causeEyebrow"></p>
+          <h2 class="section__title" data-text="causeTitle"></h2>
+          <p class="section__intro" data-text="causeIntro"></p>
+        </div>
+
+        <!-- Modular goal grid: one card per cards.goals -->
+        <div
+          class="cause__grid"
+          data-cards="goals"
+          data-template="tpl-goal"
+        ></div>
+      </section>
+
+      <!-- ============================== VOICES (LEADERS) ============================== -->
+      <section class="section section--voices" id="voices">
+        <div class="section__head">
+          <span class="section__num" data-text="voicesNum"></span>
+          <p class="eyebrow" data-text="voicesEyebrow"></p>
+          <h2 class="section__title" data-text="voicesTitle"></h2>
+        </div>
+
+        <!-- Modular leader grid: one card per cards.leaders -->
+        <div
+          class="voices__grid"
+          data-cards="leaders"
+          data-template="tpl-leader"
+        ></div>
+      </section>
+
+      <!-- ============================== timeline (KEY EVENTS) ============================== -->
+      <section class="section section--timeline" id="timeline">
+        <div class="section__head section__head--light">
+          <span class="section__num" data-text="flashNum"></span>
+          <p class="eyebrow eyebrow--light" data-text="flashEyebrow"></p>
+          <h2 class="section__title" data-text="flashTitle"></h2>
+          <p class="section__intro" data-text="flashIntro"></p>
+        </div>
+
+        <!-- Modular timeline: one event per cards.events -->
+        <ol class="timeline" data-cards="events" data-template="tpl-event"></ol>
+      </section>
+
+      <!-- ============================== LEGACY ============================== -->
+      <section class="section section--legacy" id="legacy">
+        <div class="legacy__inner">
+          <p class="eyebrow eyebrow--light" data-text="legacyEyebrow"></p>
+          <h2 class="legacy__title" data-text="legacyTitle"></h2>
+          <p class="legacy__text" data-text="legacyText"></p>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============================== FOOTER ============================== -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <p class="footer__brand" data-text="footerBrand"></p>
+        <p class="footer__note" data-text="footerNote"></p>
+        <p class="footer__small" data-text="footerSmall"></p>
+      </div>
+    </footer>
+
+    <!-- =====================================================================
        CARD TEMPLATES
        The JS clones one of these per item in the matching cards.* array.
        - data-field="x"      → filled with item.x (element removed if x is empty)
@@ -150,64 +179,70 @@
        Every card also honors optional item.bg (background) and item.color (text).
        ===================================================================== -->
 
-  <!-- Hero slogan tag -->
-  <template id="tpl-meta">
-    <span class="hero__meta-item" data-field="label"></span>
-  </template>
+    <!-- Hero slogan tag -->
+    <template id="tpl-meta">
+      <span class="hero__meta-item" data-field="label"></span>
+    </template>
 
-  <!-- Quick fact -->
-  <template id="tpl-fact">
-    <li class="facts__item">
-      <span class="facts__num" data-field="num"></span>
-      <span class="facts__label" data-field="label"></span>
-    </li>
-  </template>
+    <!-- Quick fact -->
+    <template id="tpl-fact">
+      <li class="facts__item">
+        <span class="facts__num" data-field="num"></span>
+        <span class="facts__label" data-field="label"></span>
+      </li>
+    </template>
 
-  <!-- Goal card (set bg + tag to turn it into a highlighted primary-source card) -->
-  <template id="tpl-goal">
-    <article class="goal">
-      <span class="goal__icon" data-field="icon" aria-hidden="true"></span>
-      <span class="source__tag" data-field="tag"></span>
-      <h3 class="goal__title" data-field="title"></h3>
-      <p data-field="text"></p>
-    </article>
-  </template>
-
-  <!-- Leader card (optional integrated primary-source quote) -->
-  <template id="tpl-leader">
-    <article class="leader">
-      <div class="leader__portrait" aria-hidden="true">
-        <span class="leader__initials" data-field="initials"></span>
-      </div>
-      <div class="leader__body">
-        <h3 class="leader__name" data-field="name"></h3>
-        <p class="leader__role" data-field="role"></p>
-        <p data-field="bio"></p>
-        <div class="source source--mini" data-show-if="quote">
-          <span class="source__tag">Primary Source</span>
-          <p class="source__quote source__quote--xs" data-field="quote"></p>
-          <p class="source__cite-inline" data-field="quoteCite"></p>
-        </div>
-      </div>
-    </article>
-  </template>
-
-  <!-- Timeline event (optional integrated primary-source quote) -->
-  <template id="tpl-event">
-    <li class="event">
-      <span class="event__year" data-field="year"></span>
-      <div class="event__content">
-        <h3 class="event__title" data-field="title"></h3>
+    <!-- Goal card (set bg + tag to turn it into a highlighted primary-source card) -->
+    <template id="tpl-goal">
+      <article class="goal">
+        <span class="goal__icon" data-field="icon" aria-hidden="true"></span>
+        <span class="source__tag" data-field="tag"></span>
+        <h3 class="goal__title" data-field="title"></h3>
         <p data-field="text"></p>
-        <figure class="source source--inline" data-show-if="quote">
-          <span class="source__tag">Primary Source</span>
-          <blockquote class="source__quote source__quote--sm" data-field="quote"></blockquote>
-          <figcaption class="source__cite-inline" data-field="quoteCite"></figcaption>
-        </figure>
-      </div>
-    </li>
-  </template>
+      </article>
+    </template>
 
-  <script src="js/main.js"></script>
-</body>
+    <!-- Leader card (optional integrated primary-source quote) -->
+    <template id="tpl-leader">
+      <article class="leader">
+        <div class="leader__portrait" aria-hidden="true">
+          <span class="leader__initials" data-field="initials"></span>
+        </div>
+        <div class="leader__body">
+          <h3 class="leader__name" data-field="name"></h3>
+          <p class="leader__role" data-field="role"></p>
+          <p data-field="bio"></p>
+          <div class="source source--mini" data-show-if="quote">
+            <span class="source__tag">Primary Source</span>
+            <p class="source__quote source__quote--xs" data-field="quote"></p>
+            <p class="source__cite-inline" data-field="quoteCite"></p>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <!-- Timeline event (optional integrated primary-source quote) -->
+    <template id="tpl-event">
+      <li class="event">
+        <span class="event__year" data-field="year"></span>
+        <div class="event__content">
+          <h3 class="event__title" data-field="title"></h3>
+          <p data-field="text"></p>
+          <figure class="source source--inline" data-show-if="quote">
+            <span class="source__tag">Primary Source</span>
+            <blockquote
+              class="source__quote source__quote--sm"
+              data-field="quote"
+            ></blockquote>
+            <figcaption
+              class="source__cite-inline"
+              data-field="quoteCite"
+            ></figcaption>
+          </figure>
+        </div>
+      </li>
+    </template>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>

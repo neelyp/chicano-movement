@@ -13,13 +13,21 @@
    editors can work on different sections without colliding in git. To add a
    section, drop in a new file and list its name here. Every file has the
    shape { "text": { … }, "cards": { … } } (either key may be omitted). */
-const SECTIONS = ["hero", "who", "cause", "voices", "flashpoints", "legacy", "footer"];
+const SECTIONS = [
+  "hero",
+  "who",
+  "cause",
+  "voices",
+  "timeline",
+  "legacy",
+  "footer",
+];
 
 document.addEventListener("DOMContentLoaded", init);
 
 async function init() {
-  await loadContent();   // build the page first…
-  initNav();             // …then wire up the (now-rendered) interactions
+  await loadContent(); // build the page first…
+  initNav(); // …then wire up the (now-rendered) interactions
   initScrollSpy();
   initReveal();
   initProgress();
@@ -50,7 +58,9 @@ async function loadContent() {
 
 /* Fetch and parse one data/sections/<name>.json file. */
 async function loadSection(name) {
-  const res = await fetch("data/sections/" + name + ".json", { cache: "no-store" });
+  const res = await fetch("data/sections/" + name + ".json", {
+    cache: "no-store",
+  });
   if (!res.ok) throw new Error(name + ".json — HTTP " + res.status);
   return res.json();
 }
@@ -110,7 +120,9 @@ function showContentError(err) {
     "<strong>Content didn’t load.</strong> Open this site through a local " +
     "web server (e.g. VS Code “Live Server”) rather than double-clicking the " +
     "file — browsers block the <code>data/sections/</code> files on <code>file://</code>. " +
-    "<span class='error-banner__detail'>(" + err.message + ")</span>";
+    "<span class='error-banner__detail'>(" +
+    err.message +
+    ")</span>";
   console.error("Failed to load section content:", err);
 }
 
@@ -156,13 +168,18 @@ function initScrollSpy() {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
         navLinks.forEach(function (a) {
-          a.classList.toggle("is-active", a.getAttribute("href") === "#" + entry.target.id);
+          a.classList.toggle(
+            "is-active",
+            a.getAttribute("href") === "#" + entry.target.id,
+          );
         });
       });
     },
-    { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+    { rootMargin: "-45% 0px -50% 0px", threshold: 0 },
   );
-  sections.forEach(function (s) { spy.observe(s); });
+  sections.forEach(function (s) {
+    spy.observe(s);
+  });
 }
 
 /* =====================================================================
@@ -170,16 +187,20 @@ function initScrollSpy() {
    ===================================================================== */
 function initReveal() {
   const targets = document.querySelectorAll(
-    ".section__head, .who__lede, .facts__item, .goal, .leader, .event, .legacy__inner"
+    ".section__head, .who__lede, .facts__item, .goal, .leader, .event, .legacy__inner",
   );
   targets.forEach(function (el, i) {
     el.setAttribute("data-reveal", "");
     el.style.transitionDelay = (i % 6) * 60 + "ms";
   });
 
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
   if (reduceMotion || !("IntersectionObserver" in window)) {
-    targets.forEach(function (el) { el.classList.add("is-visible"); });
+    targets.forEach(function (el) {
+      el.classList.add("is-visible");
+    });
     return;
   }
 
@@ -192,9 +213,11 @@ function initReveal() {
         }
       });
     },
-    { rootMargin: "0px 0px -10% 0px", threshold: 0.12 }
+    { rootMargin: "0px 0px -10% 0px", threshold: 0.12 },
   );
-  targets.forEach(function (el) { revealer.observe(el); });
+  targets.forEach(function (el) {
+    revealer.observe(el);
+  });
 }
 
 /* =====================================================================
@@ -214,9 +237,12 @@ function initProgress() {
   window.addEventListener(
     "scroll",
     function () {
-      if (!ticking) { window.requestAnimationFrame(update); ticking = true; }
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
     },
-    { passive: true }
+    { passive: true },
   );
   update();
 }
